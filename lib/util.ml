@@ -31,17 +31,17 @@ let extract x =
     | None -> 999
 
 let get_num1 x1 = 
-    extract (Char.get_digit x1)
+    Char.get_digit_exn x1
 
 let get_num2 x1 x2 = 
-    let y1 = extract (Char.get_digit x1) in
-    let y2 = extract (Char.get_digit x2) in
+    let y1 = Char.get_digit_exn x1 in
+    let y2 = Char.get_digit_exn x2 in
     10*y1 + y2
 
 let get_num3 x1 x2 x3 = 
-    let y1 = extract (Char.get_digit x1) in
-    let y2 = extract (Char.get_digit x2) in
-    let y3 = extract (Char.get_digit x3) in
+    let y1 = Char.get_digit_exn x1 in
+    let y2 = Char.get_digit_exn x2 in
+    let y3 = Char.get_digit_exn x3 in
     100*y1 + 10*y2 + y3
 
 let rec lines_to_chars lines = 
