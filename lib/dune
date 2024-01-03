@@ -1,5 +1,5 @@
 (library
  (name aoc2023)
- (modules util problem1 problem2)
+ (modules util problem1 problem2 problem3)
  (libraries base core)
 )
