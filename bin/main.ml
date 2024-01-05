@@ -26,6 +26,16 @@ let problem17 filename =
     dump_to_screen p17p1 p17p2 time0 time1 time2;
     ()
 
+let problem5 filename = 
+    Out_channel.output_string stdout "Problem 5:\n";
+    let time0 = Int63.to_int_exn (Time_now.nanoseconds_since_unix_epoch ()) in
+    let p5p1 = Problem5.part1 filename in
+    let time1 = Int63.to_int_exn (Time_now.nanoseconds_since_unix_epoch ()) in
+    let p5p2 = Problem5.part2 filename in
+    let time2 = Int63.to_int_exn (Time_now.nanoseconds_since_unix_epoch ()) in
+    dump_to_screen p5p1 p5p2 time0 time1 time2;
+    ()
+
 let problem4 filename = 
     Out_channel.output_string stdout "Problem 4:\n";
     let time0 = Int63.to_int_exn (Time_now.nanoseconds_since_unix_epoch ()) in
@@ -67,4 +77,4 @@ let problem1 filename =
     ()
 
 let () = 
-    problem4 "inputs/input4.txt"
+    problem5 "inputs/input5.txt"
