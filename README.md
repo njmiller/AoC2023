@@ -4,6 +4,6 @@ This was meant to teach me Ocaml so there are probably ways of doing some proble
 
 # Issues
 
-There is some warning about pattern matching not being exhaustive in problem 2, which I don't understand. The code gives the correct answer if run in release mode where warnings are not errors.
+Code needs to be compiled with "--profile release" because it will give non-exhaustive pattern matching errors if I don't do that.
 
 
