@@ -60,11 +60,9 @@ let calc_calibration_string2 str =
     calc_calibration_chars2 list_chars
 
 let part1 filename = 
-    let file = In_channel.create filename in
-    let lines = In_channel.input_lines file in
+    let lines = In_channel.read_lines filename in
     List.map ~f:calc_calibration_string lines |> List.reduce_exn ~f:(+)
 
 let part2 filename = 
-    let file = In_channel.create filename in
-    let lines = In_channel.input_lines file in
+    let lines = In_channel.read_lines filename in
     List.map ~f:calc_calibration_string2 lines |> List.reduce_exn ~f:(+)

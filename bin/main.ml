@@ -1,23 +1,13 @@
-open Base
-open Stdio
+open Core
 open Aoc2023
 
 let dump_to_screen p1 p2 t0 t1 t2 = 
-    Out_channel.output_string stdout "Part 1: ";
-    Out_channel.output_string stdout (Int.to_string p1);
-    Out_channel.output_string stdout "\n";
-    Out_channel.output_string stdout "Part 2: ";
-    Out_channel.output_string stdout (Int.to_string p2);
-    Out_channel.output_string stdout "\n";
-    Out_channel.output_string stdout "Time to run: ";
-    Out_channel.output_string stdout (Int.to_string (t1-t0));
-    Out_channel.output_string stdout " ";
-    Out_channel.output_string stdout (Int.to_string (t2-t1));
-    Out_channel.output_string stdout "\n";
-    ()
+    print_endline ("Part 1: " ^ (Int.to_string p1));
+    print_endline ("Part 2: " ^ (Int.to_string p2));
+    print_endline ("Time to run: " ^ (Int.to_string (t1-t0)) ^ " " ^ (Int.to_string (t2-t1)))
 
 let problem17 filename = 
-    Out_channel.output_string stdout "Problem 17:\n";
+    print_endline "Problem 17:";
     let time0 = Int63.to_int_exn (Time_now.nanoseconds_since_unix_epoch ()) in
     let p17p1 = Problem17.part1 filename in
     let time1 = Int63.to_int_exn (Time_now.nanoseconds_since_unix_epoch ()) in
@@ -26,8 +16,18 @@ let problem17 filename =
     dump_to_screen p17p1 p17p2 time0 time1 time2;
     ()
 
+let problem7 filename = 
+    print_endline "Problem 7:";
+    let time0 = Int63.to_int_exn (Time_now.nanoseconds_since_unix_epoch ()) in
+    let p7p1 = Problem7.part1 filename in
+    let time1 = Int63.to_int_exn (Time_now.nanoseconds_since_unix_epoch ()) in
+    let p7p2 = Problem7.part2 filename in
+    let time2 = Int63.to_int_exn (Time_now.nanoseconds_since_unix_epoch ()) in
+    dump_to_screen p7p1 p7p2 time0 time1 time2;
+    ()
+
 let problem6 filename = 
-    Out_channel.output_string stdout "Problem 5:\n";
+    print_endline "Problem 6:";
     let time0 = Int63.to_int_exn (Time_now.nanoseconds_since_unix_epoch ()) in
     let p6p1 = Problem6.part1 filename in
     let time1 = Int63.to_int_exn (Time_now.nanoseconds_since_unix_epoch ()) in
@@ -38,7 +38,7 @@ let problem6 filename =
 
         
 let problem5 filename = 
-    Out_channel.output_string stdout "Problem 5:\n";
+    print_endline "Problem 5:";
     let time0 = Int63.to_int_exn (Time_now.nanoseconds_since_unix_epoch ()) in
     let p5p1 = Problem5.part1 filename in
     let time1 = Int63.to_int_exn (Time_now.nanoseconds_since_unix_epoch ()) in
@@ -48,7 +48,7 @@ let problem5 filename =
     ()
 
 let problem4 filename = 
-    Out_channel.output_string stdout "Problem 4:\n";
+    print_endline "Problem 4:";
     let time0 = Int63.to_int_exn (Time_now.nanoseconds_since_unix_epoch ()) in
     let p4p1 = Problem4.part1 filename in
     let time1 = Int63.to_int_exn (Time_now.nanoseconds_since_unix_epoch ()) in
@@ -58,7 +58,7 @@ let problem4 filename =
     ()
 
 let problem3 filename = 
-    Out_channel.output_string stdout "Problem 3:\n";
+    print_endline "Problem 3:";
     let time0 = Int63.to_int_exn (Time_now.nanoseconds_since_unix_epoch ()) in
     let p3p1 = Problem3.part1 filename in
     let time1 = Int63.to_int_exn (Time_now.nanoseconds_since_unix_epoch ()) in
@@ -68,7 +68,7 @@ let problem3 filename =
     ()
 
 let problem2 filename = 
-    Out_channel.output_string stdout "Problem 2:\n";
+    print_endline "Problem 2:";
     let time0 = Int63.to_int_exn (Time_now.nanoseconds_since_unix_epoch ()) in
     let p2p1 = Problem2.part1 filename in
     let time1 = Int63.to_int_exn (Time_now.nanoseconds_since_unix_epoch ()) in
@@ -78,7 +78,7 @@ let problem2 filename =
     ()
 
 let problem1 filename = 
-    Out_channel.output_string stdout "Problem 1:\n";
+    print_endline "Problem 1:";
     let time0 = Int63.to_int_exn (Time_now.nanoseconds_since_unix_epoch ()) in
     let p1p1 = Problem1.part1 filename in
     let time1 = Int63.to_int_exn (Time_now.nanoseconds_since_unix_epoch ()) in
@@ -87,5 +87,16 @@ let problem1 filename =
     dump_to_screen p1p1 p1p2 time0 time1 time2;
     ()
 
-let () = 
-    problem6 "inputs/input6.txt"
+let () =
+    let args = Sys.get_argv () in
+    match Int.of_string args.(1) with
+    | 1 -> problem1 "inputs/input1.txt"
+    | 2 -> problem2 "inputs/input2.txt"
+    | 3 -> problem3 "inputs/input3.txt"
+    | 4 -> problem4 "inputs/input4.txt"
+    | 5 -> problem5 "inputs/input5.txt"
+    | 6 -> problem6 "inputs/input6.txt"
+    | 7 -> problem7 "inputs/input7.txt"
+    | 17 -> problem17 "inputs/input17.txt"
+    | _ -> ()
+    
