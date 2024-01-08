@@ -1,5 +1,17 @@
 (library
  (name aoc2023)
- (modules util problem1 problem2 problem3 problem4 problem5 problem6 problem7 problem17 problem25)
- (libraries base core core_kernel.pairing_heap)
-)
+ (modules
+  util
+  problem1
+  problem2
+  problem3
+  problem4
+  problem5
+  problem6
+  problem7
+  problem9
+  problem10
+  problem11
+  problem17
+  problem25)
+ (libraries core core_kernel.pairing_heap))

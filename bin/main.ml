@@ -16,6 +16,36 @@ let problem17 filename =
     dump_to_screen p17p1 p17p2 time0 time1 time2;
     ()
 
+let problem11 filename = 
+    print_endline "Problem 11:";
+    let time0 = Int63.to_int_exn (Time_now.nanoseconds_since_unix_epoch ()) in
+    let p11p1 = Problem11.part1 filename in
+    let time1 = Int63.to_int_exn (Time_now.nanoseconds_since_unix_epoch ()) in
+    let p11p2 = Problem11.part2 filename in
+    let time2 = Int63.to_int_exn (Time_now.nanoseconds_since_unix_epoch ()) in
+    dump_to_screen p11p1 p11p2 time0 time1 time2;
+    ()
+
+let problem10 filename = 
+    print_endline "Problem 10:";
+    let time0 = Int63.to_int_exn (Time_now.nanoseconds_since_unix_epoch ()) in
+    let p10p1 = Problem10.part1 filename in
+    let time1 = Int63.to_int_exn (Time_now.nanoseconds_since_unix_epoch ()) in
+    let p10p2 = Problem10.part2_ver2 filename in
+    let time2 = Int63.to_int_exn (Time_now.nanoseconds_since_unix_epoch ()) in
+    dump_to_screen p10p1 p10p2 time0 time1 time2;
+    ()
+    
+let problem9 filename = 
+    print_endline "Problem 9:";
+    let time0 = Int63.to_int_exn (Time_now.nanoseconds_since_unix_epoch ()) in
+    let p9p1 = Problem9.part1 filename in
+    let time1 = Int63.to_int_exn (Time_now.nanoseconds_since_unix_epoch ()) in
+    let p9p2 = Problem9.part2 filename in
+    let time2 = Int63.to_int_exn (Time_now.nanoseconds_since_unix_epoch ()) in
+    dump_to_screen p9p1 p9p2 time0 time1 time2;
+    ()
+
 let problem7 filename = 
     print_endline "Problem 7:";
     let time0 = Int63.to_int_exn (Time_now.nanoseconds_since_unix_epoch ()) in
@@ -97,6 +127,9 @@ let () =
     | 5 -> problem5 "inputs/input5.txt"
     | 6 -> problem6 "inputs/input6.txt"
     | 7 -> problem7 "inputs/input7.txt"
+    | 9 -> problem9 "inputs/input9.txt"
+    | 10 -> problem10 "inputs/input10.txt"
+    | 11 -> problem11 "inputs/input11.txt"
     | 17 -> problem17 "inputs/input17.txt"
-    | _ -> ()
+    | _ -> print_string "Not implemented yet"
     
