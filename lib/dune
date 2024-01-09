@@ -12,6 +12,10 @@
   problem9
   problem10
   problem11
+  problem12
+  problem13
+  problem15
+  problem16
   problem17
   problem25)
  (libraries core core_kernel.pairing_heap))
