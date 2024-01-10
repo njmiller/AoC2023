@@ -183,7 +183,7 @@ let rec find_threecut dict edges =
     if List.length new_edges = 3 then
         let keys_new = Hashtbl.keys new_dict in
         let num_nodes = List.map ~f:(fun x -> (String.length x)/3) keys_new in
-        List.reduce ~f:( * ) num_nodes
+        List.reduce_exn ~f:( * ) num_nodes
     else
         find_threecut dict edges
 
@@ -194,3 +194,6 @@ let part1 filename =
     let _ = List.map ~f:(fun x -> Hashtbl.set dict ~key:x.name ~data:x) comp in
     wire_diagram dict connections;
     find_threecut dict connections
+
+let part2 filename = 
+    1

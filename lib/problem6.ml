@@ -34,7 +34,7 @@ let rec calc_max_aux i time distance =
 
 let calc_max time distance = calc_max_aux (time-1) time distance
 
-let part2 = 
+let part2 filename = 
     (*let (time, distance) = (71530, 940200) in*)
     let (time, distance) = (56977875, 546192711311139) in
     let min_i = calc_min time distance in
