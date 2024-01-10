@@ -6,4 +6,4 @@ This was meant to teach me Ocaml so there are probably ways of doing some proble
 
 Code needs to be compiled with "--profile release" because it will give non-exhaustive pattern matching errors if I don't do that.
 
-
+Some problems which require cycle detection don't "work". I basically output some values to the screen and then manually determined the cycle length and then calculated the solution externally from that.
